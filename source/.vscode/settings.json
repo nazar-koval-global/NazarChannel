@@ -1,0 +1,11 @@
+{
+    "devices" : {
+        "streamingStick" : "192.168.0.121",
+    },
+    "device.ip": "${config:devices.streamingStick}",
+    "device.password": "aaaa",
+    "brightscript.debug.autoRunSgDebugCommands": [
+
+    ],
+    "editor.bracketPairColorization.enabled": true
+}
