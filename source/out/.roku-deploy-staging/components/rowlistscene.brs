@@ -3,13 +3,12 @@ sub init()
     m.rowlist = m.top.findNode("exampleRowList")
     m.top.setFocus(true)
 
-    for i = 0 to 3
-        initTask()
-    end for
+    initTask()
 end sub
 
 sub initTask()
     m.taskRequest = createObject("roSGNode", "TaskRequest")
+    m.taskRequest.country = ["us", "mx" , "ca"]
     m.taskRequest.observeField("result", "onResultChanged")
     m.taskRequest.control = "RUN"
 end sub

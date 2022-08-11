@@ -13,7 +13,7 @@ sub Main()
     screen.setMessagePort(m.port)
 
     'Create a scene and load /components/helloworld.xml'
-    screen.CreateScene("RowListExample")
+    screen.CreateScene("RowListScene")
     screen.show()
 
     while(true)

@@ -1,64 +1,49 @@
 sub init()
-    m.top.FunctionName = "infoAmount"
+    m.top.FunctionName = "getContent"
 end sub
 
-sub infoAmount()
-    urlArr = ["us", "mx" , "ca"]
-    arrJson=[]
+sub getContent()
+    country = m.top.country
+    resultArray = []
 
-    for j=0 to urlArr.Count()-1
-
-        request = CreateObject("roUrlTransfer")
-        request.SetCertificatesFile("common:/certs/ca-bundle.crt")
-        request.AddHeader("X-Roku-Reserved-Dev-Id", "")
-        request.InitClientCertificates()
-
-        request.SetUrl("http://us.api.iheart.com/api/v2/content/liveStations?countryCode=" + urlArr[j].toStr())
-        m.response = request.GetToString()
-
-        m.parseJson = ParseJSON (m.response)
-        arrJson.push(m.parseJson)
-        ' countrylink = "http://us.api.iheart.com/api/v2/content/liveStations?countryCode=us" '+ urlArr[j].toStr()
-        ' print "http://us.api.iheart.com/api/v2/content/liveStations?countryCode=" + urlArr[j].toStr()
+    for countryItem = 0 to country.Count() - 1
+        res = requets("http://" + country[countryItem].toStr() + ".api.iheart.com/api/v2/content/liveStations?countryCode=" + country[countryItem].toStr())
+        parseJson = ParseJSON (res)
+        resultArray.push(parseJson)
     end for
-    getContent(arrJson, arrJson.Count()-1)
+    
+    m.top.result = prepareContentTree(resultArray)
 end sub
 
-sub getContent(arrJson, linksAmount)
+function requets(url, method = "GET")
+    request = CreateObject("roUrlTransfer")
+    request.SetCertificatesFile("common:/certs/ca-bundle.crt")
+    request.AddHeader("X-Roku-Reserved-Dev-Id", "")
+    request.InitClientCertificates()
+
+    request.SetUrl(url)
+
+    return request.GetToString()
+end function
+
+function prepareContentTree(arrJson)
     root = CreateObject("roSGNode", "ContentNode")
 
-    for x=0 to linksAmount-1
+    for x = 0 to arrJson.Count() - 1
+
+        print("OUT")
+
         rowContent = root.createChild("ContentNode")
         rowContent.title =  "BLOCK " + (x+1).toStr()
-        for i = 0 to arrJson[x].hits.count()-1
+        
+        for i = 0 to arrJson[x].hits.count() - 1
             rowItem = rowContent.createChild("ContentNode")
             rowItem.addFields({
                 title: arrJson[x].hits[i].name
-                HDPosterUrl: arrJson[x].hits[i].logo
+                HDPosterUrl: arrJson[x].hits[i].logo + "?ops=fit(100,100)"
             })
         end for
     end for
 
-        ' rowContent = root.createChild("ContentNode")
-        ' rowContent.title = "BLOCK 2"
-        ' for i = 0 to arrJson[1].hits.count()-1
-        '     rowItem = rowContent.createChild("ContentNode")
-        '     rowItem.addFields({
-        '         title: arrJson[1].hits[i].name
-        '         HDPosterUrl: arrJson[1].hits[i].logo
-        '     })
-        ' end for
-        
-        ' rowContent = root.createChild("ContentNode")
-        ' rowContent.title = "BLOCK 3"
-        ' for i = 0 to arrJson[2].hits.count()-1
-        '     rowItem = rowContent.createChild("ContentNode")
-        '     rowItem.addFields({
-        '         title: arrJson[2].hits[i].name
-        '         HDPosterUrl: arrJson[2].hits[i].logo
-        '     })
-        ' end for
-        
-        m.top.result = root
-        ' print arrJson
-    end sub
+    return root
+end function
