@@ -11,11 +11,11 @@ sub init()
   end sub
 
   sub showfocus()
-    scale = 1 + (m.top.focusPercent * 0.08)
+    scale = 1 + (m.top.focusPercent * 0.09)
     m.itemposter.scale = [scale, scale]
   end sub
 
   sub showrowfocus()
-    m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.75)
+    m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.85)
     m.itemlabel.opacity = m.top.rowFocusPercent
   end sub

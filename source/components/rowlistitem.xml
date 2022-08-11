@@ -13,15 +13,15 @@
     <children >
         <Poster
           id = "itemPoster"
-          translation = "[ 10, 10 ]"
-          width = "100"
-          height = "100"
+          translation = "[ 30, 20 ]"
+          width = "80"
+          height = "80"
           scaleRotateCenter = "[ 256.0, 144.0 ]" >
     
           <Rectangle
             id = "itemMask"
-            width = "100"
-            height = "100"
+            width = "120"
+            height = "120"
             scaleRotateCenter = "[ 256.0, 144.0 ]"
             color = "0x101010FF"
             opacity = "0.75" />
@@ -30,7 +30,7 @@
     
         <Label
           id = "itemLabel"
-          translation = "[ 20, 100 ]"
+          translation = "[ 0, 100 ]"
           width = "100"
           horizAlign = "right"
           opacity = "0.0" />

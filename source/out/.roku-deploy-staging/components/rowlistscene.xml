@@ -7,10 +7,12 @@
         id = "exampleRowList" 
         translation = "[ 130, 160 ]" 
         itemComponentName = "RowListItem" 
-        numRows = "3" 
-        itemSize = "[ 1050, 308 ]" 
+        numRows = "4" 
+        itemSize = "[ 1100, 308 ]" 
         rowItemSize = "[ [120, 120] ]" 
-        itemSpacing = "[ 40, 40 ]" 
+        showRowLabel = "[ true ]" 
+        rowLabelOffset	= "[20, 500]"
+        itemSpacing = "[ 0, 40 ]" 
         vertFocusAnimationStyle = "fixedFocusWrap" 
         rowFocusAnimationStyle = "fixedFocusWrap" />
     </children>

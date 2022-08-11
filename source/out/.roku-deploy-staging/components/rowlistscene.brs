@@ -3,7 +3,9 @@ sub init()
     m.rowlist = m.top.findNode("exampleRowList")
     m.top.setFocus(true)
 
-    initTask()
+    for i = 0 to 3
+        initTask()
+    end for
 end sub
 
 sub initTask()
