@@ -14,7 +14,9 @@ sub Main()
 
     'Create a scene and load /components/helloworld.xml'
     screen.CreateScene("RowListScene")
+    screen.CreateScene("RowListScene").backgroundUri = "https://yugcontract.ua/img/shop/Samsung/B7200-02-02.jpg"
     screen.show()
+    ' print screen.CreateScene("RowListScene")
 
     while(true)
         msg = wait(0, m.port)

@@ -8,6 +8,7 @@ sub init()
     itemcontent = m.top.itemContent
     m.itemposter.uri = itemcontent.HDPosterUrl
     m.itemlabel.text = itemcontent.title
+    m.itemlabel.font.size = 16
   end sub
 
   sub showfocus()
@@ -16,6 +17,6 @@ sub init()
   end sub
 
   sub showrowfocus()
-    m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.85)
-    m.itemlabel.opacity = m.top.rowFocusPercent
+    ' m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.85)
+    ' m.itemlabel.opacity = m.top.rowFocusPercent
   end sub

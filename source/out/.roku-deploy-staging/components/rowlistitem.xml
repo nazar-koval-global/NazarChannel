@@ -14,8 +14,8 @@
         <Poster
           id = "itemPoster"
           translation = "[ 30, 20 ]"
-          width = "80"
-          height = "80"
+          width = "100"
+          height = "100"
           scaleRotateCenter = "[ 256.0, 144.0 ]" >
     
           <Rectangle
@@ -24,16 +24,16 @@
             height = "120"
             scaleRotateCenter = "[ 256.0, 144.0 ]"
             color = "0x101010FF"
-            opacity = "0.75" />
+            opacity = "0.0" />
     
         </Poster>
     
         <Label
           id = "itemLabel"
-          translation = "[ 0, 100 ]"
+          translation = "[ 20, 110 ]"
           width = "100"
           horizAlign = "right"
-          opacity = "0.0" />
+          opacity = "1.0" />
     </children>
     
 </component>
