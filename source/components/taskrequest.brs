@@ -13,9 +13,7 @@ function requets(url, method = "GET")
     request.SetCertificatesFile("common:/certs/ca-bundle.crt")
     request.AddHeader("X-Roku-Reserved-Dev-Id", "")
     request.InitClientCertificates()
-
     request.SetUrl(url)
-
     return request.GetToString()
 end function
 

@@ -2,7 +2,8 @@ sub init()
     m.top.backgroundURI = "pkg:/images/rsgde_bg_hd.jpg"
     m.rowlist = m.top.findNode("exampleRowList")
     m.top.setFocus(true)
-    m.countryList = ["us", "mx" , "ca"]
+    m.countryList = ["us", "mx", "ca"]
+    m.rowList.rowLabelFont.size = 16
     initTask()
 end sub
 
@@ -24,7 +25,6 @@ sub initTask()
     for each link in createCountryUrlList(m.countryList)
         taskRequest = createObject("roSGNode", "TaskRequest")
         taskRequest.url = link
-
         taskRequest.observeField("result", "onResultChanged")
         taskRequest.control = "RUN"
     end for
@@ -33,25 +33,20 @@ end sub
 sub onResultChanged(event as Object)
     result = event.getData()
     taskRequest = event.getRoSGNode()
-
     rowContent = prepareContentTree(taskRequest.result)
-    
     m.content.appendChild(rowContent)
-
     m.rowList.content = m.content
 end sub
 
 function prepareContentTree(arrJson)
     rowContent = createObject("roSGNode", "ContentNode")
-    
     for i = 0 to arrJson.hits.count() - 1
         rowContent.title =  "BLOCK " + arrJson.hits[i].countries
         rowItem = rowContent.createChild("ContentNode")
         rowItem.addFields({
             title: arrJson.hits[i].name
-            HDPosterUrl: arrJson.hits[i].logo + "?ops=fit(100,100)"
+            HDPosterUrl: arrJson.hits[i].logo + "?ops=fit(80,80)"
         })
     end for
-
     return rowContent
 end function

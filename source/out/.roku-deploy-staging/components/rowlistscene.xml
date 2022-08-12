@@ -6,17 +6,14 @@
     <children >
       <RowList 
           id = "exampleRowList" 
-          translation = "[ 130, 60 ]" 
+          translation = "[130, 60]" 
           itemComponentName = "RowListItem" 
           numRows = "3" 
-          itemSize = "[ 1100, 200 ]" 
-          rowItemSize = "[ [120, 120] ]" 
-          showRowLabel = "[ true ]" 
-          rowLabelOffset	= "[ [20, 20] ]"
-          itemSpacing = "[ 0, 0 ]" 
-          vertFocusAnimationStyle = "fixedFocus" 
+          itemSize = "[1100, 200]" 
+          rowItemSize = "[[120, 120]]" 
+          showRowLabel = "[true]" 
+          rowLabelOffset	= "[[10, 15]]"
+          rowItemSpacing = "[[10, 0]]" 
           rowFocusAnimationStyle = "fixedFocusWrap" />
-
-        <TaskRequest id="mytask"/>
     </children>
 </component>
