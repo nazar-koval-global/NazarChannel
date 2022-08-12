@@ -19,42 +19,39 @@ function createCountryUrlList(list)
 end function
 
 sub initTask()
+    m.content = CreateObject("roSGNode", "ContentNode")
+
     for each link in createCountryUrlList(m.countryList)
-        m.taskRequest = createObject("roSGNode", "TaskRequest")
-        m.taskRequest.url = link
-        print m.taskRequest.url
+        taskRequest = createObject("roSGNode", "TaskRequest")
+        taskRequest.url = link
+
+        taskRequest.observeField("result", "onResultChanged")
+        taskRequest.control = "RUN"
     end for
-    m.taskRequest.observeField("result", "onResultChanged")
-    m.taskRequest.control = "RUN"
-    print createCountryUrlList(m.countryList)
 end sub
 
 sub onResultChanged(event as Object)
-    print "_____onResultChanged____"
-    print m.taskRequest.url
     result = event.getData()
     taskRequest = event.getRoSGNode()
-    content = prepareContentTree(result)
-    ' print "___PRINT___"
-    ' print m.taskRequest.result
-    ' m.rowList.content = m.taskRequest.result
+
+    rowContent = prepareContentTree(taskRequest.result)
+    
+    m.content.appendChild(rowContent)
+
+    m.rowList.content = m.content
 end sub
 
 function prepareContentTree(arrJson)
-    ' root = CreateObject("roSGNode", "ContentNode")
+    rowContent = createObject("roSGNode", "ContentNode")
+    
+    for i = 0 to arrJson.hits.count() - 1
+        rowContent.title =  "BLOCK " + arrJson.hits[i].countries
+        rowItem = rowContent.createChild("ContentNode")
+        rowItem.addFields({
+            title: arrJson.hits[i].name
+            HDPosterUrl: arrJson.hits[i].logo + "?ops=fit(100,100)"
+        })
+    end for
 
-    ' for x = 0 to arrJson.Count() - 1
-    '     rowContent = root.createChild("ContentNode")
-    '     rowContent.title =  "BLOCK " + (x+1).toStr()
-        
-    '     for i = 0 to arrJson[x].hits.count() - 1
-    '         rowItem = rowContent.createChild("ContentNode")
-    '         rowItem.addFields({
-    '             title: arrJson[x].hits[i].name
-    '             HDPosterUrl: arrJson[x].hits[i].logo + "?ops=fit(100,100)"
-    '         })
-    '     end for
-    ' end for
-
-    ' return root
+    return rowContent
 end function

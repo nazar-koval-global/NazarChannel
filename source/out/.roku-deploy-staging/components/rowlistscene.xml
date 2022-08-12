@@ -8,12 +8,13 @@
           id = "exampleRowList" 
           translation = "[ 130, 160 ]" 
           itemComponentName = "RowListItem" 
-          numRows = "4" 
+          numRows = "3" 
           itemSize = "[ 1100, 300 ]" 
           rowItemSize = "[ [220, 220] ]" 
           showRowLabel = "[ true ]" 
           rowLabelOffset	= "[[20, 20]]"
           itemSpacing = "[ 0, 40 ]" 
+          variableWidthItems="[true]"
           vertFocusAnimationStyle = "fixedFocusWrap" 
           rowFocusAnimationStyle = "fixedFocusWrap" />
 
