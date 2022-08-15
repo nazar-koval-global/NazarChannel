@@ -1,0 +1,98 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "2.0.0",
+    "configurations": [
+
+        {
+            "type": "brightscript",
+            "request": "launch",
+            "name": "BrightScript Debug: Launch",
+            "stopOnEntry": false,
+            "host": "${config:device.ip}",
+            "password": "${config:device.password}",
+            "rootDir": "${workspaceFolder}",
+            "outDir": "${workspaceFolder}/out",
+            "enableDebuggerAutoRecovery": true,
+            "stopDebuggerOnAppExit": false,
+            "files": [
+                "manifest",
+                "actions/**/*.*",
+                "components/**/*.*",
+                "csfake/**/*.*",
+                "feed/**/*.*",
+                "fonts/**/*.*",
+                "key/**/*.*",
+                "lib/**/*.*",
+                "locale/**/*.*",
+                "reducers/**/*.*",
+                "shared_apis/**/*.*",
+                "source/**/*.*",
+                "source_headless/**/*.*", 
+                "source_voice_adapter/**/*.*",
+                "ADBMobileConfig.json",
+                "env.json"
+            ]
+        },
+        {
+            "type": "brightscript",
+            "request": "launch",
+            "name": "BrightScript Callbacks Debug: Launch",
+            "host" : "${config:device.ip}",
+            "password": "${config:device.password}",
+            "files": [
+                "manifest",
+                "actions/**/*.*",
+                "components/**/*.*",
+                "csfake/**/*.*",
+                "feed/**/*.*",
+                "fonts/**/*.*",
+                "key/**/*.*",
+                "lib/**/*.*",
+                "locale/**/*.*",
+                "reducers/**/*.*",
+                "shared_apis/**/*.*",
+                "source/**/*.*",
+                "source_headless/**/*.*", 
+                "source_voice_adapter/**/*.*",
+                "ADBMobileConfig.json",
+                "env.json",
+                "callbackstack.brs"
+            ],
+            "rootDir": "${workspaceFolder}",
+            "preLaunchTask": "inject_callbacks_debug",
+            "sourceDirs": ["${workspaceFolder}"],
+        },
+        {
+            "type": "brightscript",
+            "request": "launch",
+            "name": "BrightScript Debug Unit Tests: Launch",
+            "stopOnEntry": false,
+            "host": "${config:device.ip}",
+            "password": "${config:device.password}",
+            "rootDir": "${workspaceFolder}",
+            "enableDebuggerAutoRecovery": false,
+            "stopDebuggerOnAppExit": false,
+            "files": [
+                "manifest",
+                "actions/**/*.*",
+                "components/**/*.*",
+                "csfake/**/*.*",
+                "feed/**/*.*",
+                "fonts/**/*.*",
+                "key/**/*.*",
+                "lib/**/*.*",
+                "locale/**/*.*",
+                "reducers/**/*.*",
+                "shared_apis/**/*.*",
+                "source/**/*.*",
+                "source_headless/**/*.*",
+                "source_voice_adapter/**/*.*",
+                "ADBMobileConfig.json",
+                "env.json"
+            ],
+            "outDir": "${workspaceFolder}/out"
+        }
+    ]
+}

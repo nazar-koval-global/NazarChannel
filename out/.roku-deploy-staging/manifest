@@ -1,0 +1,7 @@
+title=NazarRadioChannel
+major_version=1
+minor_version=0
+build_version=1
+bs_libs_required=roku_ads_lib
+ui_resolutions=hd
+supports_input_launch=1
