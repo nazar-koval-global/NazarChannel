@@ -12,6 +12,4 @@ sub OnRowItemSelected(event as Object)
     itemSelected = event.GetData()
     rowContent = grid.content.GetChild(itemSelected[0])
     itemContent = rowContent.GetChild(itemSelected[1])
-
-    OpenVideoPlayerItem(itemContent)
 end sub

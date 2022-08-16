@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
  
-<component name="CGRoot" extends="ContentHandler" xsi:noNamespaceSchemaLocation="https://devtools.web.roku.com/schema/RokuSceneGraph.xsd">
+<component name="CGRoot" extends="ContentHandler">
  
     <script type="text/brightscript" uri="pkg:/components/content/CGRoot.brs" />
  

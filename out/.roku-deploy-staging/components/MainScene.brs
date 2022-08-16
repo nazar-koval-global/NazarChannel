@@ -14,6 +14,9 @@ sub Show(args as Object)
         }]
     })
     m.top.buttonBar.content = buttonBarContent
+    m.top.buttonBar.translation = [114, 6]
+    m.top.buttonBar.setFocus(true)
+
     m.top.buttonBar.theme = {
         backgroundColor: "0x000080"
         buttonColor: "0xff0000"
@@ -33,13 +36,22 @@ sub Show(args as Object)
     gridConfig = GetButtonBarScreensConfig()["home"]
     ShowNewScreenFromConfig(gridConfig)
 
-    stop
+    'Init title
+    titleContent = CreateObject("roSGNode", "ContentNode")
+    titleContent.AddFields({
+        HandlerConfigGrid: {
+            name: "HomePage"
+        }
+    })
+    ' m.top.content = titleContent
+    print(m.top)
 end sub
 
 ' Set up and show a new view
 sub ShowNewScreenFromConfig(config as Object)
     newScreen = CreateObject("roSGNode", config.screenName)
     content = CreateObject("roSGNode", "ContentNode")
+    newScreen.overhang.height = 0
 
     content.AddFields(config.handlerConfig)
     if config.fieldsToSet <> invalid
@@ -57,12 +69,12 @@ function GetButtonBarScreensConfig() as Object
     config = {
         home: {
             stackName: "home"
-            screenName: "GridView"
+            screenName: "ParagraphView"
             handlerConfig: {
                 HandlerConfigGrid: {
-                    name: "CGRoot"
+                    name: "HomePage"
                     fields: {
-                        contentType: "series"
+                        contentType: "welcome"
                     }
                 }
             }

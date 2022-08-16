@@ -2,7 +2,6 @@ sub GetContent()
     'This is only a sample. Usually the feed is retrieved from an url using roUrlTransfer
  
     feed = ReadAsciiFile("pkg:/components/content/feed.json")
- 
     if feed.Len() > 0
         json = ParseJson(feed)
         if json <> invalid AND json.rows <> invalid AND json.rows.Count() > 0
