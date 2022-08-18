@@ -96,10 +96,10 @@ sub ShowNewScreenFromConfig(config as Object)
     '     ShowSearchView(newScreen)
     if config.screenName = "StationView"
         ShowStationView(newScreen)
-        ' m.top.backgroundURI = "https://yugcontract.ua/img/shop/Samsung/B7200-02-02.jpg"
+        m.top.backgroundURI = "https://yugcontract.ua/img/shop/Samsung/B7200-02-02.jpg"
     else if config.screenName = "HomeView"
         ShowHomeView(newScreen)
-        ' m.top.backgroundURI = ""
+        m.top.backgroundURI = ""
     end if
     ' print(newScreen)
     ' print(newScreen)
