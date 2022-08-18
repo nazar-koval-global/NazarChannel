@@ -8,7 +8,7 @@
         <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
     </interface>
 
-    <script type = "text/brightscript" uri="pkg:/components/content/StationListItem.brs"/>
+    <script type = "text/brightscript" uri="pkg:/components/content/station/StationListItem.brs"/>
 
     <children >
         <Poster

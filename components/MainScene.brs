@@ -31,7 +31,7 @@ sub Show(args as Object)
     m.top.buttonBar.footprintStyle = "selection"
 
     ' Add more stacks for each button
-    m.top.componentController.selectStack = "home"
+    m.top.componentController.selectStack = "default"
     m.top.componentController.addStack = "home"
     m.top.componentController.addStack = "stations"
     m.top.componentController.addStack = "about"
@@ -40,17 +40,7 @@ sub Show(args as Object)
     gridConfig = GetButtonBarScreensConfig()["home"]
     ShowNewScreenFromConfig(gridConfig)
 
-    
-    'Init title
-    ' titleContent = CreateObject("roSGNode", "ContentNode")
-    ' titleContent.AddFields({
-    '     HandlerConfigGrid: {
-    '         name: "HomePage"
-    '     }
-    ' })
-    ' m.top.content = titleContent
-    ' print(titleContent)
-end sub
+    end sub
 
 
 sub OnButtonBarItemSelected(event as Object)
@@ -91,18 +81,16 @@ sub ShowNewScreenFromConfig(config as Object)
     if config.fieldsToSet <> invalid
         newScreen.SetFields(config.fieldsToSet)
     end if
-    newScreen.content = content
+    ' newScreen.content = content
     ' if config.screenName = "SearchView"
     '     ShowSearchView(newScreen)
-    if config.screenName = "StationView"
-        ShowStationView(newScreen)
-        m.top.backgroundURI = "https://yugcontract.ua/img/shop/Samsung/B7200-02-02.jpg"
-    else if config.screenName = "HomeView"
+    if config.screenName = "HomeView"
         ShowHomeView(newScreen)
-        m.top.backgroundURI = ""
+    else if config.screenName = "StationView"
+        ShowStationView(newScreen)
+    else if config.screenName = "AboutView"
+        ShowAboutView(newScreen)
     end if
-    ' print(newScreen)
-    ' print(newScreen)
 end sub
 
 
@@ -117,26 +105,10 @@ function GetButtonBarScreensConfig() as Object
         stations: {
             stackName: "stations"
             screenName: "StationView"
-            ' handlerConfig: {
-            '     HandlerConfigGrid: {
-            '         name: "CGRoot"
-            '         fields: {
-            '             contentType: "stations"
-            '         }
-            '     }
-            ' }
         }
         about: {
             stackName: "about"
-            screenName: "GridView"
-            handlerConfig: {
-                HandlerConfigGrid: {
-                    name: "CGRoot"
-                    fields: {
-                        contentType: "about"
-                    }
-                }
-            }
+            screenName: "AboutView"
         }
     }
     return config

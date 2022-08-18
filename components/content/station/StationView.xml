@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 
-<component name="StationView" extends="Group">
-    <interface>
-        <field id="stationView" type="node" />
-    </interface>
-    
-    <script type = "text/brightscript" uri="pkg:/components/content/StationView.brs"/>  
-    
+<component name="StationView" extends="Group">  
+    <script type = "text/brightscript" uri="pkg:/components/content/station/StationView.brs"/>  
     <children >
+        <Poster
+            id = "bgStationPoster"
+            translation = "[0, 0]" 
+            width = "1280"
+            height = "722"
+        />
+
       <RowList 
-          id = "RowList" 
-          translation = "[130, 60]" 
+          id = "StationListItem" 
+          translation = "[130, 70]" 
           itemComponentName = "StationListItem" 
           numRows = "3" 
           itemSize = "[1100, 200]" 

@@ -1,12 +1,22 @@
 sub init()
-    m.rowlist = m.top.findNode("RowList")
+    m.rowlist = m.top.findNode("StationListItem")
+    m.bgStationPoster = m.top.findNode("bgStationPoster")
+    m.bgStationPoster.uri = "https://i.pinimg.com/originals/86/69/ab/8669ababbeb05ed394d8aad8629a90e5.jpg"
+    m.bgStationPoster.opacity = 0.75
     m.top.setFocus(true)
     m.countryList = ["us", "mx", "ca"]
     m.rowList.rowLabelFont.size = 16
-    print(m.rowlist)
+    print(m.bgPoster)
     initTask()
+
+    m.top.observeField("focusedChild", "onFocusedChildChanged")
 end sub
 
+sub onFocusedChildChanged()
+    if m.top.hasFocus()
+        m.rowlist.setFocus(true)
+    end if
+end sub
 function prepareUrl(countryCode = "")
     return "http://" + countryCode + ".api.iheart.com/api/v2/content/liveStations?countryCode=" + countryCode
 end function
