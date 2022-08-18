@@ -2,7 +2,10 @@
 
 function ShowGridView(view as Object)
     view.ObserveField("rowItemSelected", "OnRowItemSelected")
-
+    ' m.top.getScene().buttonBar.translation = [400, 0]
+    ' print(m.top.overhang)
+    ' m.top.buttonBar = m.top.getScene().buttonBar
+    ' print(m.top.buttonBar.translation)
     m.top.componentController.CallFunc("show", { view: view })
 end function
 

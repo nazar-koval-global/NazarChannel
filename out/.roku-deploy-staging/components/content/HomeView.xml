@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component name="HomeView" extends="Group">
+    <interface>
+        <field id="titleText" type="node" />
+    </interface>
+    <!-- <script type="text/brightscript" uri="pkg:/components/HomeViewLogic.brs" /> -->
+    <children>
+        <Label id="titleText" 
+          	text = "Welcome to Nazar`s Radio Channel!"
+          	width = "600" 
+          	height = "720" 
+          	horizAlign = "left"
+          	vertAlign = "center"
+            translation = "[40, 0]"
+        />
+        <Label id="subTitleText" 
+          	text = "This is most popular channel for me and my trainee program in this new project. Please support me in my difficult startup and I`ll show you results very soon!"
+          	width = "600" 
+          	height = "720" 
+          	horizAlign = "left"
+          	vertAlign = "center"
+            translation = "[40, 50]"
+        />
+    </children>
+</component>

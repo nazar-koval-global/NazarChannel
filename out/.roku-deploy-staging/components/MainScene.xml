@@ -2,6 +2,7 @@
 
 <component name="MainScene" extends="BaseScene">
     <script type="text/brightscript" uri="MainScene.brs" />
-
     <script type="text/brightscript" uri="GridViewLogic.brs" />
+    <script type="text/brightscript" uri="HomeViewLogic.brs" />
+    <script type="text/brightscript" uri="StationViewLogic.brs" />
 </component>

@@ -1,0 +1,10 @@
+<?xml version = "1.0" encoding = "utf-8" ?> 
+
+<component name = "StationTaskRequest" extends = "Task" >
+    <interface>
+        <field id = "url" type = "string" />
+        <field id = "result" type = "assocarray" />
+    </interface>
+
+    <script type = "text/brightscript" uri="pkg:/components/content/StationTaskRequest.brs"/>  
+</component>

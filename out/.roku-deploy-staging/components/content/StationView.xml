@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<component name="StationView" extends="Group">
+    <interface>
+        <field id="stationView" type="node" />
+    </interface>
+    
+    <script type = "text/brightscript" uri="pkg:/components/content/StationView.brs"/>  
+    
+    <children >
+      <RowList 
+          id = "RowList" 
+          translation = "[130, 60]" 
+          itemComponentName = "StationListItem" 
+          numRows = "3" 
+          itemSize = "[1100, 200]" 
+          rowItemSize = "[[120, 120]]" 
+          showRowLabel = "[true]" 
+          rowLabelOffset	= "[[10, 15]]"
+          rowItemSpacing = "[[10, 0]]" 
+          rowFocusAnimationStyle = "fixedFocusWrap" />
+    </children>
+</component>
