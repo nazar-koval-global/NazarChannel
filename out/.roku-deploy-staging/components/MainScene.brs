@@ -15,15 +15,23 @@ sub Show(args as Object)
     })
     m.top.buttonBar.content = buttonBarContent
     m.top.buttonBar.translation = [400, 0]
-    m.top.buttonBar.setFocus(true)
+    m.top.buttonBar.focusable = true
+    m.top.buttonBar.SetFocus(true)
+    ?""
+    ?"ButtonBar>>>"; m.top.buttonBar
+    ?""
+    ?m.top.buttonBar.hasFocus()
+    ' m.top.buttonBar.content.GetChild(0).SetFocus(true)
+    ' print(m.top.buttonBar.content.GetChild(0).SetFocus(true))
 
     m.top.buttonBar.ObserveField("itemSelected", "OnButtonBarItemSelected")
     
 
     m.top.buttonBar.theme = {
-        backgroundColor: "0x000080"
-        buttonColor: "0xff0000"
-        footprintButtonColor: "0xff000073"
+        backgroundColor: "#ffffff"
+        buttonColor: "#000000"
+        footprintButtonColor: "#4287f5"
+        hintTextColor: "#4287f5"
     }
 
     m.top.buttonBar.visible = true
@@ -31,10 +39,10 @@ sub Show(args as Object)
     m.top.buttonBar.footprintStyle = "selection"
 
     ' Add more stacks for each button
-    m.top.componentController.selectStack = "default"
     m.top.componentController.addStack = "home"
     m.top.componentController.addStack = "stations"
     m.top.componentController.addStack = "about"
+    m.top.componentController.selectStack = "default"
 
     ' Show first screen
     gridConfig = GetButtonBarScreensConfig()["home"]
@@ -91,6 +99,8 @@ sub ShowNewScreenFromConfig(config as Object)
     else if config.screenName = "AboutView"
         ShowAboutView(newScreen)
     end if
+
+
 end sub
 
 

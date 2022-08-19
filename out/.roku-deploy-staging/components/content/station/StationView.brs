@@ -8,7 +8,8 @@ sub init()
     m.rowList.rowLabelFont.size = 16
     print(m.bgPoster)
     initTask()
-
+    m.top.endStatus = "done"
+    initSpinner()
     m.top.observeField("focusedChild", "onFocusedChildChanged")
 end sub
 

@@ -2,7 +2,11 @@
 
 
 <component name="StationView" extends="Group">  
+    <interface>
+        <field id = "endStatus" type = "string" />
+    </interface>
     <script type = "text/brightscript" uri="pkg:/components/content/station/StationView.brs"/>  
+    <script type = "text/brightscript" uri="pkg:/components/content/busyspinner/BusySpinner.brs"/>  
     <children >
         <Poster
             id = "bgStationPoster"
@@ -11,16 +15,21 @@
             height = "722"
         />
 
-      <RowList 
-          id = "StationListItem" 
-          translation = "[130, 70]" 
-          itemComponentName = "StationListItem" 
-          numRows = "3" 
-          itemSize = "[1100, 200]" 
-          rowItemSize = "[[120, 120]]" 
-          showRowLabel = "[true]" 
-          rowLabelOffset	= "[[10, 15]]"
-          rowItemSpacing = "[[10, 0]]" 
-          rowFocusAnimationStyle = "fixedFocusWrap" />
+        <RowList 
+            id = "StationListItem" 
+            translation = "[130, 70]" 
+            itemComponentName = "StationListItem" 
+            numRows = "3" 
+            itemSize = "[1100, 200]" 
+            rowItemSize = "[[120, 120]]" 
+            showRowLabel = "[true]" 
+            rowLabelOffset	= "[[10, 15]]"
+            rowItemSpacing = "[[10, 0]]" 
+            rowFocusAnimationStyle = "fixedFocusWrap" />
+
+        <BusySpinner
+          id = "busySpinner"
+          visible = "false" />
+
     </children>
 </component>
