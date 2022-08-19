@@ -37,7 +37,7 @@
             itemSize = "[1200, 200]" 
             rowItemSize = "[[120, 120]]" 
             showRowLabel = "[true]" 
-            rowLabelOffset	= "[[10, 55]]"
+            rowLabelOffset	= "[[10, 15]]"
             rowItemSpacing = "[[10, 0]]" 
             rowFocusAnimationStyle = "fixedFocusWrap" 
         />
