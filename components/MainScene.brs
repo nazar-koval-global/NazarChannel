@@ -16,13 +16,6 @@ sub Show(args as Object)
     m.top.buttonBar.content = buttonBarContent
     m.top.buttonBar.translation = [400, 0]
     m.top.buttonBar.focusable = true
-    m.top.buttonBar.SetFocus(true)
-    ?""
-    ?"ButtonBar>>>"; m.top.buttonBar
-    ?""
-    ?m.top.buttonBar.hasFocus()
-    ' m.top.buttonBar.content.GetChild(0).SetFocus(true)
-    ' print(m.top.buttonBar.content.GetChild(0).SetFocus(true))
 
     m.top.buttonBar.ObserveField("itemSelected", "OnButtonBarItemSelected")
     
@@ -30,7 +23,7 @@ sub Show(args as Object)
     m.top.buttonBar.theme = {
         backgroundColor: "#ffffff"
         buttonColor: "#000000"
-        footprintButtonColor: "#4287f5"
+        footprintButtonColor: "#39d43b"
         hintTextColor: "#4287f5"
     }
 
@@ -48,7 +41,10 @@ sub Show(args as Object)
     gridConfig = GetButtonBarScreensConfig()["home"]
     ShowNewScreenFromConfig(gridConfig)
 
-    end sub
+    m.top.buttonBar.jumpToItem = 0
+    m.top.buttonBar.setFocus(true)
+
+end sub
 
 
 sub OnButtonBarItemSelected(event as Object)
@@ -99,8 +95,6 @@ sub ShowNewScreenFromConfig(config as Object)
     else if config.screenName = "AboutView"
         ShowAboutView(newScreen)
     end if
-
-
 end sub
 
 

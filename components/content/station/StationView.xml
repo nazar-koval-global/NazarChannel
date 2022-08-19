@@ -25,11 +25,13 @@
             showRowLabel = "[true]" 
             rowLabelOffset	= "[[10, 15]]"
             rowItemSpacing = "[[10, 0]]" 
-            rowFocusAnimationStyle = "fixedFocusWrap" />
+            rowFocusAnimationStyle = "fixedFocusWrap" 
+        />
 
         <BusySpinner
           id = "busySpinner"
-          visible = "false" />
+          visible = "true" 
+        />
 
     </children>
 </component>

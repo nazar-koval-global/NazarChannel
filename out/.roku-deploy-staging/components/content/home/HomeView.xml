@@ -11,21 +11,35 @@
         />
         <Label id="titleText" 
           	text = "Welcome to Nazar`s Radio Channel!"
-          	width = "900" 
+          	width = "850" 
+          	height = "720" 
+          	horizAlign = "left"
+          	vertAlign = "center"
+            translation = "[25, -200]"
+            font = "font:LargeBoldSystemFont"
+            color = "#39d43b"
+        />
+        <Label id="subtitleText" 
+          	text = "This is most popular channel for me and my trainee program in this new project. Please support me in my difficult startup and I`ll show you results very soon!"
+          	width = "650" 
           	height = "720" 
           	horizAlign = "left"
           	vertAlign = "center"
             translation = "[25, -100]"
-            font = "font:LargeBoldSystemFont"
-        />
-        <Label id="subtitleText" 
-          	text = "This is most popular channel for me and my trainee program in this new project. Please support me in my difficult startup and I`ll show you results very soon!"
-          	width = "600" 
-          	height = "720" 
-          	horizAlign = "left"
-          	vertAlign = "center"
-            translation = "[25, 20]"
             wrap = "true"
+        />
+
+        <RowList 
+            id = "HomeList" 
+            translation = "[35, 450]" 
+            itemComponentName = "HomeListItem" 
+            numRows = "1" 
+            itemSize = "[1200, 200]" 
+            rowItemSize = "[[120, 120]]" 
+            showRowLabel = "[true]" 
+            rowLabelOffset	= "[[10, 55]]"
+            rowItemSpacing = "[[10, 0]]" 
+            rowFocusAnimationStyle = "fixedFocusWrap" 
         />
     </children>
 </component>

@@ -1,7 +1,7 @@
 sub init()
-    m.itemposter = m.top.findNode("itemPoster")
-    m.itemmask = m.top.findNode("itemMask")
-    m.itemlabel = m.top.findNode("itemLabel")
+    m.itemposter = m.top.findNode("homeItemPoster")
+    m.itemmask = m.top.findNode("homeItemMask")
+    m.itemlabel = m.top.findNode("homeItemLabel")
 end sub
 
 function getRandomColor()
@@ -23,5 +23,5 @@ sub showfocus()
 end sub
 
 sub showrowfocus()
-  m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.85)
+'   m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.85)
 end sub

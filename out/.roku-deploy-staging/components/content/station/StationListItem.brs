@@ -11,7 +11,6 @@ end function
 
 sub showcontent()
   itemcontent = m.top.itemContent
-  ' print itemcontent.getParent().getParent().getParent()
   m.itemposter.uri = itemcontent.HDPosterUrl
   m.itemlabel.text = itemcontent.title
   m.itemlabel.font.size = 10

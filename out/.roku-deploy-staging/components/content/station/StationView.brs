@@ -6,10 +6,7 @@ sub init()
     m.top.setFocus(true)
     m.countryList = ["us", "mx", "ca"]
     m.rowList.rowLabelFont.size = 16
-    print(m.bgPoster)
     initTask()
-    m.top.endStatus = "done"
-    initSpinner()
     m.top.observeField("focusedChild", "onFocusedChildChanged")
 end sub
 
@@ -18,6 +15,7 @@ sub onFocusedChildChanged()
         m.rowlist.setFocus(true)
     end if
 end sub
+
 function prepareUrl(countryCode = "")
     return "http://" + countryCode + ".api.iheart.com/api/v2/content/liveStations?countryCode=" + countryCode
 end function
@@ -31,6 +29,7 @@ function createCountryUrlList(list)
 end function
 
 sub initTask()
+    initSpinner()
     m.content = CreateObject("roSGNode", "ContentNode")
 
     for each link in createCountryUrlList(m.countryList)
@@ -47,6 +46,7 @@ sub onResultChanged(event as Object)
     rowContent = prepareContentTree(taskRequest.result)
     m.content.appendChild(rowContent)
     m.rowList.content = m.content
+    m.top.endStatus = "done"
 end sub
 
 function prepareContentTree(arrJson)
