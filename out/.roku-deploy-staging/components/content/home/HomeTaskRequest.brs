@@ -3,7 +3,6 @@ sub init()
 end sub
 
 sub getContent()
-    print res
     res = requets(m.top.url)
     parseJson = ParseJSON (res)
     m.top.result = parseJson

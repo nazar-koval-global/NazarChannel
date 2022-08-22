@@ -4,9 +4,12 @@
 <component name="StationView" extends="Group">  
     <interface>
         <field id = "endStatus" type = "string" />
+        <field id = "rowIContent" type = "node" />
     </interface>
     <script type = "text/brightscript" uri="pkg:/components/content/station/StationView.brs"/>  
+    <script type = "text/brightscript" uri="pkg:/components/StationViewLogic.brs"/>  
     <script type = "text/brightscript" uri="pkg:/components/content/busyspinner/BusySpinner.brs"/>  
+    <script type = "text/brightscript" uri="pkg:/components/VideoPlayerLogic.brs"/>  
     <children >
         <Poster
             id = "bgStationPoster"

@@ -20,19 +20,16 @@ function createCountryUrl(list)
     for each country in list
         resultCountryUrlList.push(prepareUrl(country))
     end for
-    print resultCountryUrlList[Rnd(3)]
     return resultCountryUrlList[Rnd(3)]
 end function
 
 sub initTask()
     ' initSpinner()
     m.content = CreateObject("roSGNode", "ContentNode")
-
         homeTaskRequest = createObject("roSGNode", "HomeTaskRequest")
         homeTaskRequest.url = createCountryUrl(m.countryList)
         homeTaskRequest.observeField("result", "onResultChanged")
         homeTaskRequest.control = "RUN"
-        print "Hellooooo"
 end sub
 
 sub onResultChanged(event as Object)
