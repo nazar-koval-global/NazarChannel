@@ -7,13 +7,7 @@ sub init()
     m.countryList = ["us", "mx", "ca"]
     m.rowList.rowLabelFont.size = 16
     initTask()
-    m.rowlist.observeField("rowItemSelected", "playItem")
     m.top.observeField("focusedChild", "onFocusedChildChanged")
-end sub
-
-sub playItem()
-    contentVideoLink = m.top.rowIContent.getChild(m.rowlist.rowItemSelected[0]).getChild(m.rowlist.rowItemSelected[1]).hls_stream
-    OpenVideoPlayer(contentVideoLink, 0, true)
 end sub
 
 sub onFocusedChildChanged()
@@ -64,7 +58,8 @@ function prepareContentTree(arrJson)
         rowItem.addFields({
             title: arrJson.hits[i].name
             HDPosterUrl: arrJson.hits[i].logo + "?ops=fit(80,80)"
-            hls_stream: arrJson.hits[i].streams.hls_stream
+            url: arrJson.hits[i].streams.hls_stream
+            StreamFormat: "hls"
         })
     end for
     return rowContent
