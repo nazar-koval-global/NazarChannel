@@ -1,6 +1,6 @@
 {
     "devices" : {
-        "streamingStick" : "192.168.1.106",
+        "streamingStick" : "192.168.0.121",
     },
     "device.ip": "${config:devices.streamingStick}",
     "device.password": "aaaa",

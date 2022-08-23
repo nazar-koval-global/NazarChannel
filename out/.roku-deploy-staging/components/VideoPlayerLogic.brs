@@ -4,17 +4,21 @@ function OpenVideoPlayer(content as Object) as Object
     video = CreateObject("roSGNode", "MediaView")
 
 
-    video2 = CreateObject("roSGNode", "Video")
+    ' video2 = CreateObject("roSGNode", "Video")
 
+    m.buttonBar = m.top.buttonBar
 
-
+    video.content = content
+    ' ?video
+    ' ?video.content
+    ?video.content.getChild(0)
     ' video2.content = content
     ' ' ' Set it to start playing, it wont begin playback until show() is called
-    ' video2.control = "play"
+    video.control = "play"
     ' ' Show the media view
 
     m.top.componentController.CallFunc("show", {
-        view: video2
+        view: video
     })
-    return video2
+    return video
 end function

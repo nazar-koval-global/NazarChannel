@@ -46,7 +46,6 @@ sub onResultChanged(event as Object)
     rowContent = prepareContentTree(taskRequest.result)
     m.content.appendChild(rowContent)
     m.rowList.content = m.content
-    m.top.rowIContent = m.content
     m.top.endStatus = "done"
 end sub
 
@@ -61,6 +60,8 @@ function prepareContentTree(arrJson)
             url: arrJson.hits[i].streams.hls_stream
             StreamFormat: "hls"
         })
+        rowItemChild = rowItem.createChild("ContentNode")
+        rowItemChild.addFields({url: rowItem.url})
     end for
     return rowContent
 end function
