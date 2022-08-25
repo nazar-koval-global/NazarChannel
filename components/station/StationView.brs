@@ -57,11 +57,10 @@ function prepareContentTree(arrJson)
         rowItem.addFields({
             title: arrJson.hits[i].name
             HDPosterUrl: arrJson.hits[i].logo + "?ops=fit(80,80)"
-            url: arrJson.hits[i].streams.hls_stream
-            StreamFormat: "hls"
         })
         rowItemChild = rowItem.createChild("ContentNode")
-        rowItemChild.addFields({url: rowItem.url})
+        ' rowItemChild.addFields({url: arrJson.hits[i].streams.hls_stream, StreamFormat: "hls"})
+        rowItemChild.addFields({URL: "http://roku.content.video.llnw.net/smedia/59021fabe3b645968e382ac726cd6c7b/Gb/siCt-V7LOSU08W_Ve1ByJY5N9emKZeXZvnrH2Yb9c/117_segment_2_twitch__nw_060515.mp4"})
     end for
     return rowContent
 end function

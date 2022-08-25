@@ -5,9 +5,9 @@
     <interface>
         <field id = "endStatus" type = "string" />
     </interface>
-    <script type = "text/brightscript" uri="pkg:/components/content/station/StationView.brs"/>  
+    <script type = "text/brightscript" uri="pkg:/components/station/StationView.brs"/>  
     <script type = "text/brightscript" uri="pkg:/components/StationViewLogic.brs"/>  
-    <script type = "text/brightscript" uri="pkg:/components/content/busyspinner/BusySpinner.brs"/>  
+    <script type = "text/brightscript" uri="pkg:/components/busyspinner/BusySpinner.brs"/>  
     <script type = "text/brightscript" uri="pkg:/components/VideoPlayerLogic.brs"/>
     <children >
         <Poster
@@ -34,6 +34,13 @@
           id = "busySpinner"
           visible = "true" 
         />
+
+        <Video
+  id="musicvideos"
+  width="1280"
+  height="720"
+  translation="[0,0]"
+/>
 
     </children>
 </component>

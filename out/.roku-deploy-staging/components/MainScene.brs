@@ -46,7 +46,6 @@ sub Show(args as Object)
 
 end sub
 
-
 sub OnButtonBarItemSelected(event as Object)
     itemSelected = event.GetData()
     RetrieveScreenFromItem(itemSelected)

@@ -6,5 +6,5 @@
         <field id = "result" type = "assocarray" />
     </interface>
 
-    <script type = "text/brightscript" uri="pkg:/components/content/station/StationTaskRequest.brs"/>  
+    <script type = "text/brightscript" uri="pkg:/components/station/StationTaskRequest.brs"/>  
 </component>

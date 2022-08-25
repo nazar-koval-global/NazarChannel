@@ -7,10 +7,12 @@ function ShowStationView(view as Object)
 end function
 
 sub rowItemSelectedChanged(event as Object)
+    rowItem = event.GetRoSGNode()
     rowItemSelected = event.getData()
-
     contentVideoLink = m.rowlist.content.getChild(rowItemSelected[0]).getChild(rowItemSelected[1])
-
-
-    OpenVideoPlayer(contentVideoLink)
+    ' rowItem.getParent().visible = false
+    ' ?rowItem.getParent()
+    if (OpenVideoPlayer(contentVideoLink).getParent().id = "")
+        OpenVideoPlayer(contentVideoLink)
+    end if
 end sub
