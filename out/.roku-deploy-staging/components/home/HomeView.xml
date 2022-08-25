@@ -41,5 +41,7 @@
             rowItemSpacing = "[[10, 0]]" 
             rowFocusAnimationStyle = "fixedFocusWrap" 
         />
+        
     </children>
+
 </component>

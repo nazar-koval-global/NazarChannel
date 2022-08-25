@@ -6,5 +6,4 @@
     <script type="text/brightscript" uri="HomeViewLogic.brs" />
     <script type="text/brightscript" uri="StationViewLogic.brs" />
     <script type="text/brightscript" uri="AboutViewLogic.brs" />
-    <script type="text/brightscript" uri="VideoPlayerLogic.brs" />
 </component>

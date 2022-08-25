@@ -7,10 +7,14 @@ function ShowStationView(view as Object)
 end function
 
 sub rowItemSelectedChanged(event as Object)
-    rowItem = event.GetRoSGNode()
     rowItemSelected = event.getData()
     contentVideoLink = m.rowlist.content.getChild(rowItemSelected[0]).getChild(rowItemSelected[1])
-    ' rowItem.getParent().visible = false
-    ' ?rowItem.getParent()
-    OpenVideoPlayer(contentVideoLink)
+
+    videoContent = createObject("RoSGNode", "ContentNode")
+    videoContent.url = contentVideoLink.url
+    videoContent.streamformat = "hls"
+    m.video = m.top.findNode("videoBlock")
+    m.video.content = videoContent
+    m.video.control = "play"
+
 end sub

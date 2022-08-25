@@ -7,9 +7,20 @@
     </interface>
     <script type = "text/brightscript" uri="pkg:/components/station/StationView.brs"/>  
     <script type = "text/brightscript" uri="pkg:/components/StationViewLogic.brs"/>  
-    <script type = "text/brightscript" uri="pkg:/components/busyspinner/BusySpinner.brs"/>  
-    <script type = "text/brightscript" uri="pkg:/components/VideoPlayerLogic.brs"/>
+    <script type = "text/brightscript" uri="pkg:/components/busyspinner/BusySpinner.brs"/>          
+    <script type = "text/brightscript" uri="pkg:/components/videohandler/CustomVideoView.brs" />
+
     <children >
+
+        <Video
+            id = "videoBlock"
+            width = "1280"
+            height = "720"
+            translation = "[0,0]"
+            opacity = "0"
+            
+        />
+
         <Poster
             id = "bgStationPoster"
             translation = "[0, 0]" 
