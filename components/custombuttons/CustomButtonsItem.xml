@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<component name="CustomButtonsItem" extends="Group">
+      <interface>
+        <field id="itemContent" type="node" onChange="OnContentSet" />
+        <field id="focusPercent" type="float" onChange="HandleFocus" />
+        <field id="isItemSelected" type="bool" value="false" alwaysNotify="true"/>
+        <field id="rowListHasFocus" type="bool" onChange="HandleFocus" />
+      </interface>
+
+    <script type = "text/brightscript" uri="pkg:/components/custombuttons/CustomButtonsItem.brs"/>
+
+    <children >
+        <Group
+            id = "customButtonGroup">
+            <Label
+              id = "customButtonLabel"
+              horizAlign = "center"
+              width = "100%"
+            />
+            <Rectangle
+              id = "customButtonUnderline"
+              color = "#39d43b"
+              width = "40%"
+              height = "2"
+            />
+        </Group>
+    </children>
+    
+</component>

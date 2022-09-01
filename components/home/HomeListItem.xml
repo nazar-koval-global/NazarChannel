@@ -4,8 +4,7 @@
 
     <interface > 
         <field id = "itemContent" type = "node" onChange = "showcontent"/>
-        <field id = "focusPercent" type = "float" onChange = "showfocus"/> 
-        <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
+        <field id = "focusPercent" type = "float"/> 
     </interface>
 
     <script type = "text/brightscript" uri="pkg:/components/home/HomeListItem.brs"/>
@@ -19,11 +18,10 @@
     
           <Rectangle
             id = "homeItemMask"
-            width = "130"
-            height = "140"
-            translation = "[0, 0]"
-            color = "0x101010FF"
-            opacity = "0.75" />
+            width = "138"
+            height = "127"
+            translation = "[-10.0, 0.0]"
+            color = "0x101010FF"/>
     
         </Poster>
 

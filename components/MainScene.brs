@@ -13,25 +13,28 @@ sub Show(args as Object)
             id: "about"
         }]
     })
+    buttonsRowList = m.top.buttonBar.findNode("buttonsRowList")
+    buttonsRowList.itemComponentName = "CustomButtonsItem"
+    ?buttonsRowList
     m.top.buttonBar.content = buttonBarContent
     m.top.buttonBar.translation = [400, 0]
     m.top.buttonBar.focusable = true
 
     m.top.buttonBar.ObserveField("itemSelected", "OnButtonBarItemSelected")
     
-
-    m.top.buttonBar.theme = {
-        backgroundColor: "#ffffff"
-        buttonColor: "#000000"
-        footprintButtonColor: "#39d43b"
-        hintTextColor: "#4287f5"
-    }
+    ' ?m.top.buttonBar.findNode("buttonsRowList")
+    ' m.top.buttonBar.theme = {
+    '     backgroundColor: "#ffffff"
+    '     buttonColor: "#000000"
+    '     footprintButtonColor: "#39d43b"
+    '     hintTextColor: "#4287f5"
+    ' }
 
     m.top.buttonBar.visible = true
     ' selection style for footprint representation
     m.top.buttonBar.footprintStyle = "selection"
 
-    ' Add more stacks for each button
+    ' ' Add more stacks for each button
     m.top.componentController.addStack = "home"
     m.top.componentController.addStack = "stations"
     m.top.componentController.addStack = "about"
@@ -84,9 +87,6 @@ sub ShowNewScreenFromConfig(config as Object)
     if config.fieldsToSet <> invalid
         newScreen.SetFields(config.fieldsToSet)
     end if
-    ' newScreen.content = content
-    ' if config.screenName = "SearchView"
-    '     ShowSearchView(newScreen)
     if config.screenName = "HomeView"
         ShowHomeView(newScreen)
     else if config.screenName = "StationView"

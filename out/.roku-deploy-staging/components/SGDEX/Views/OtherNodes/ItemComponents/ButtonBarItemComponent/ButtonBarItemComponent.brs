@@ -13,7 +13,6 @@ sub OnContentSet()
     content = m.top.itemContent
     label = m.top.findNode("title")
     poster =  m.top.findNode("poster")
-
     if content <> invalid
         m.top.isItemSelected = false
         poster.uri = content.hdPosterUrl

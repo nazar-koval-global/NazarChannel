@@ -13,7 +13,7 @@ sub rowItemSelectedChanged(event as Object)
     videoContent = createObject("RoSGNode", "ContentNode")
     videoContent.url = contentVideoLink.url
     videoContent.streamformat = "hls"
-    m.video = m.top.findNode("videoBlock")
+    m.video = m.top.findNode("stationAudioItem")
     m.video.content = videoContent
     m.video.control = "play"
 

@@ -13,7 +13,7 @@
     <children >
 
         <Video
-            id = "videoBlock"
+            id = "stationAudioItem"
             width = "1280"
             height = "720"
             translation = "[0,0]"
@@ -34,11 +34,12 @@
             itemComponentName = "StationListItem" 
             numRows = "3" 
             itemSize = "[1100, 200]" 
-            rowItemSize = "[[120, 120]]" 
+            rowItemSize = "[[128, 128]]" 
             showRowLabel = "[true]" 
             rowLabelOffset	= "[[10, 15]]"
             rowItemSpacing = "[[10, 0]]" 
             rowFocusAnimationStyle = "fixedFocusWrap" 
+            vertFocusAnimationStyle = "floatingFocus" 
         />
 
         <BusySpinner

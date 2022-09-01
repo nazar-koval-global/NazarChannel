@@ -19,11 +19,10 @@
     
           <Rectangle
             id = "itemMask"
-            width = "130"
-            height = "140"
-            translation = "[0, 0]"
-            color = "0x101010FF"
-            opacity = "0.75" />
+            width = "138"
+            height = "127"
+            translation = "[-10.0, 0.0]"
+            color = "0x101010FF" />
     
         </Poster>
 

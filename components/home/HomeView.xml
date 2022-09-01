@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <component name="HomeView" extends="Group">
+    <interface > 
+        <field id = "itemContent" type = "node" onChange = "showcontent"/>
+        <field id = "focusPercent" type = "float" onChange = "showfocus"/> 
+        <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
+    </interface>
     <script type="text/brightscript" uri="pkg:/components/home/HomeView.brs" />
     <children>
         <Poster
@@ -15,7 +20,7 @@
           	height = "720" 
           	horizAlign = "left"
           	vertAlign = "center"
-            translation = "[25, -200]"
+            translation = "[45, -220]"
             font = "font:LargeBoldSystemFont"
             color = "#39d43b"
         />
@@ -25,21 +30,22 @@
           	height = "720" 
           	horizAlign = "left"
           	vertAlign = "center"
-            translation = "[25, -100]"
+            translation = "[45, -120]"
             wrap = "true"
         />
 
         <RowList 
             id = "HomeList" 
-            translation = "[35, 450]" 
+            translation = "[75, 450]" 
             itemComponentName = "HomeListItem" 
             numRows = "1" 
-            itemSize = "[1200, 200]" 
-            rowItemSize = "[[120, 120]]" 
+            itemSize = "[1100, 200]" 
+            rowItemSize = "[[128, 128]]" 
             showRowLabel = "[true]" 
             rowLabelOffset	= "[[10, 15]]"
             rowItemSpacing = "[[10, 0]]" 
             rowFocusAnimationStyle = "fixedFocusWrap" 
+            vertFocusAnimationStyle = "floatingFocus" 
         />
         
     </children>

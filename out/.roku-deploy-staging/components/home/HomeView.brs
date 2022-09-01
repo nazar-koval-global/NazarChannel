@@ -9,6 +9,13 @@ sub init()
     m.bgHomePoster.opacity = 0.75
     m.countryList = ["", "us", "mx", "ca"]
     initTask()
+    m.top.observeField("focusedChild", "onFocusedChildChanged")
+end sub
+
+sub onFocusedChildChanged()
+    if m.top.hasFocus()
+        m.rowlist.setFocus(true)
+    end if
 end sub
 
 function prepareUrl(countryCode = "")
@@ -57,10 +64,8 @@ end function
 function onKeyEvent(key as String, press as Boolean) as Boolean  
     if press then
         if (key = "down") then
-            if m.top.hasFocus()
-                m.rowlist.setFocus(true)
-            end if
-        
+            m.top.setFocus(true)
+            m.rowlist.setFocus(true)        
         end if
     end if
 end function
